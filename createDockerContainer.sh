@@ -46,7 +46,7 @@ nohup bitbake agl-demo-platform &" > $FOLDER/build.sh
     --build-arg HOST_GID=`id -g` \
     --build-arg GIT_USER_NAME=nat7216 \
     --build-arg GIT_EMAIL=xukchen@ucm.es \
-    -t agl:latest \
+    -t agl:demo \
     .
     echo "Done."
 else
@@ -58,6 +58,10 @@ read
 if [ $REPLY = y ]
 then
     echo "Running..."
-    docker run -itd -v $FOLDER/out:/home/$USER/agl agl:latest
+    docker run -d \
+    -it \
+    -name demo_agl \
+    -v $FOLDER/out:/home/$USER/agl \
+    agl:latest
 fi
 echo "Ok. Bye."
