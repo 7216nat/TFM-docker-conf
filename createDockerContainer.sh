@@ -37,7 +37,7 @@ echo \"INHERIT+=\\"rm_work\\"\" >> conf/local.conf
 echo \"EXTRA_IMAGE_FEATURES+=\\"tools-sdk\\"\" >> conf/local.conf
 echo \"EXTRA_IMAGE_FEATURES+=\\"tools-debug\\"\" >> conf/local.conf
 echo \"EXTRA_IMAGE_FEATURES+=\\"eclipse-debug\\"\" >> conf/local.conf
-nohup bitbake agl-demo-platform &" > $FOLDER/build.sh
+nohup bitbake agl-demo-platform-crosssdk &" > $FOLDER/build.sh
 
     wget -N https://github.com/7216nat/TFM-docker-conf/raw/master/Dockerfile
     docker build \
@@ -60,7 +60,7 @@ then
     echo "Running..."
     docker run -d \
     -it \
-    -name demo_agl \
+    --name demo_agl \
     -v $FOLDER/out:/home/$USER/agl \
     agl:latest
 fi
