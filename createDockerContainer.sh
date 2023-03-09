@@ -61,7 +61,7 @@ then
     docker run -d \
     -it \
     --name demo_agl \
-    -v $FOLDER/out:/home/$USER/agl \
-    agl:latest
+    -v $FOLDER/out:/home/$USER/AGL \
+    agl:demo
 fi
 echo "Ok. Bye."
