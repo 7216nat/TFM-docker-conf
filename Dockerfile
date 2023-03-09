@@ -37,5 +37,7 @@ ENV PATH="$USER_FOLDER/bin:${PATH}"
 RUN git config --global user.email "$GIT_USER_NAME"
 RUN git config --global user.name "$GIT_EMAIL"
 
-ADD test.sh $USER_FOLDER/AGL/
+COPY build.sh $USER_FOLDER/AGL/
+RUN chmod a+x $USER_FOLDER/AGL/build.sh
+
 WORKDIR $USER_FOLDER/AGL
