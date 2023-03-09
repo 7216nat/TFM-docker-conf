@@ -28,15 +28,15 @@ mkdir $TARGET_BRANCH && cd $TARGET_BRANCH
 repo init -b $TARGET_BRANCH -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 repo sync && cd \$AGL_TOP/$TARGET_BRANCH
 source meta-agl/scripts/aglsetup.sh -m raspberrypi4 -b raspberrypi4 agl-demo agl-devel
-echo \"DL_DIR=\\"\$AGL_TOP/downloads/\\"\" >> \$AGL_TOP/site.conf
-echo \"SSTATE_DIR=\\"\$AGL_TOP/sstate-cach/\\"\" >> \$AGL_TOP/site.conf
+echo \"DL_DIR=\\\"\$AGL_TOP/downloads/\\\"\" >> \$AGL_TOP/site.conf
+echo \"SSTATE_DIR=\\\"\$AGL_TOP/sstate-cach/\\\"\" >> \$AGL_TOP/site.conf
 ln -sf \$AGL_TOP/site.conf conf/
-echo \"INHERIT+=\\"buildhistory\\"\" >> conf/local.conf
-echo \"BUILDHISTORY_COMMIT=\\"1\\"\" >> conf/local.conf
-echo \"INHERIT+=\\"rm_work\\"\" >> conf/local.conf
-echo \"EXTRA_IMAGE_FEATURES+=\\"tools-sdk\\"\" >> conf/local.conf
-echo \"EXTRA_IMAGE_FEATURES+=\\"tools-debug\\"\" >> conf/local.conf
-echo \"EXTRA_IMAGE_FEATURES+=\\"eclipse-debug\\"\" >> conf/local.conf
+echo \"INHERIT+=\\\"buildhistory\\\"\" >> conf/local.conf
+echo \"BUILDHISTORY_COMMIT=\\\"1\\\"\" >> conf/local.conf
+echo \"INHERIT+=\\\"rm_work\\\"\" >> conf/local.conf
+echo \"EXTRA_IMAGE_FEATURES+=\\\"tools-sdk\\\"\" >> conf/local.conf
+echo \"EXTRA_IMAGE_FEATURES+=\\\"tools-debug\\\"\" >> conf/local.conf
+echo \"EXTRA_IMAGE_FEATURES+=\\\"eclipse-debug\\\"\" >> conf/local.conf
 nohup bitbake agl-demo-platform-crosssdk &" > $FOLDER/build.sh
 
     wget -N https://github.com/7216nat/TFM-docker-conf/raw/master/Dockerfile
