@@ -37,7 +37,7 @@ ENV PATH="$USER_FOLDER/bin:${PATH}"
 RUN git config --global user.email "$GIT_USER_NAME"
 RUN git config --global user.name "$GIT_EMAIL"
 
-COPY --chown=$USER_NAME:$USER_NAME build.sh $USER_FOLDER/AGL/build.sh
-RUN chmod a+x $USER_FOLDER/AGL/build.sh
+COPY --chown=$USER_NAME:$USER_NAME build.sh $USER_FOLDER
+RUN chmod a+x $USER_FOLDER/build.sh
 
 WORKDIR $USER_FOLDER/AGL
