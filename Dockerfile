@@ -36,6 +36,7 @@ ENV PATH="$USER_FOLDER/bin:${PATH}"
 # Configures image's linux git config:
 RUN git config --global user.email "$GIT_USER_NAME"
 RUN git config --global user.name "$GIT_EMAIL"
+RUN git config --global color.ui false
 
 COPY --chown=$USER_NAME:$USER_NAME build.sh $USER_FOLDER
 RUN chmod a+x $USER_FOLDER/build.sh
